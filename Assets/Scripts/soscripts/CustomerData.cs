@@ -4,8 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CustomerData", menuName = "Customer", order = 0)]
 public class CustomerData : ScriptableObject {
     public Species species = Species.raccoon;
-    public AnimalState type = AnimalState.normal;
-    public string animalName;
+    public string customerName;
     public string request;
 
     //Sprites
@@ -34,8 +33,8 @@ public class CustomerData : ScriptableObject {
             }else if(prefData[0] == "stat"){
                 StatPreference pref = new StatPreference();
                 pref.stat = (IngredientData.IngredientStat)int.Parse(prefData[1]); //Second is stat
-                pref.min = int.Parse(prefData[2]); //Third is min
-                pref.max = int.Parse(prefData[3]); //Fourth is max
+                pref.min = float.Parse(prefData[2]); //Third is min
+                pref.max = float.Parse(prefData[3]); //Fourth is max
                 preferences[i] = pref;
             }
         }
@@ -44,9 +43,5 @@ public class CustomerData : ScriptableObject {
 
     public enum Species{
         raccoon, rat, opossum, squirrel, skunk, bird
-    }
-
-    public enum AnimalState{
-        normal, ants, parasite
     }
 }
