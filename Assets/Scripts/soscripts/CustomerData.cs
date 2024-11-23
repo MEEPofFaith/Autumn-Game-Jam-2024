@@ -65,6 +65,7 @@ public class CustomerData : ScriptableObject {
         string text = success;
         if(type == CustomerType.parasite) text = scrambleText(text);
         return text;
+    }
 
     //Parses array of strings into an array of preferences. Cursed, I know.
     public void initPreferences(){
@@ -90,18 +91,18 @@ public class CustomerData : ScriptableObject {
     }
 
     public static string scrambleText(string toScramble){
-            // https://stackoverflow.com/questions/18673619/randomizing-a-string
+        // https://stackoverflow.com/questions/18673619/randomizing-a-string
 
-            List<char> original = new List<char>(toScramble.ToCharArray());
-            List<char> randomized = new List<char>();
-            
-            for(int size = original.Count; size > 0; size--){
-                int index = Random.Range(0, size);
-                randomized.Add(original[index]);
-                original.RemoveAt(index);
-            }
+        List<char> original = new List<char>(toScramble.ToCharArray());
+        List<char> randomized = new List<char>();
+        
+        for(int size = original.Count; size > 0; size--){
+            int index = UnityEngine.Random.Range(0, size);
+            randomized.Add(original[index]);
+            original.RemoveAt(index);
+        }
 
-            return new string(randomized.ToArray());
+        return new string(randomized.ToArray());
     }
 
     public enum CustomerType{

@@ -21,7 +21,7 @@ public class Customer : MonoBehaviour {
         }
 
         if(pass){
-            for(int i = 0; i < len, i++){
+            for(int i = 0; i < len; i++){
                 if(!complete[i]){
                     return data.passText(i);
                 }
