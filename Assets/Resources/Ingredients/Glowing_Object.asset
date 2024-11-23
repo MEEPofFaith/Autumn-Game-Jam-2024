@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb8d536cba47fd744b018ee65dc55f26, type: 3}
   m_Name: Glowing_Object
   m_EditorClassIdentifier: 
-  itemName: Ingredient
-  flavorText: 
+  itemName: Blue Glowing Object
+  flavorText: Definitely not radioactive
   type: 0
   smell: 0
-  flavor: 0
-  appearance: 0
+  flavor: 5
+  appearance: 5
   texture: 0
   sprite: {fileID: 0}

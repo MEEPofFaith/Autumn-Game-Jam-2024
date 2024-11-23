@@ -15,8 +15,8 @@ MonoBehaviour:
   itemName: Rubber Boot Heel
   flavorText: 
   type: 0
-  smell: 0
-  flavor: 0
-  appearance: 0
-  texture: 0
+  smell: 3
+  flavor: 3
+  appearance: 2
+  texture: 4
   sprite: {fileID: 0}

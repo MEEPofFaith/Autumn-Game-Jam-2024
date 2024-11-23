@@ -15,8 +15,8 @@ MonoBehaviour:
   itemName: Moldy Pizza
   flavorText: 
   type: 0
-  smell: 0
-  flavor: 0
-  appearance: 0
-  texture: 0
+  smell: 4
+  flavor: 2
+  appearance: 1
+  texture: 4
   sprite: {fileID: 0}

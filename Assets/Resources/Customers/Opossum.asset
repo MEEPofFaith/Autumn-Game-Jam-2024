@@ -12,7 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d057cc7459be88349894f25397181ac7, type: 3}
   m_Name: Opossum
   m_EditorClassIdentifier: 
-  species: 0
-  type: 0
-  animalName: 
+  customerName: Opossum
   request: 
+  type: 0
+  normal: {fileID: 0}
+  ants: {fileID: 0}
+  parasite: {fileID: 0}
+  preferenceList:
+  - ing|Banana Peel
+  - stat|1|1|3
+  - stat|2|1|3
+  fail: "I\u2019ll take it. But I won\u2019t like it."
+  pass: "I\u2019ll take it. But\u2026"
+  passCond:
+  - "I don\u2019t taste no banana peel."
+  - "It looks\u2026too much."
+  - "It tastes\u2026too extra."
+  success: Looks perfect!

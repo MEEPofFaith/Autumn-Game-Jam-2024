@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb8d536cba47fd744b018ee65dc55f26, type: 3}
   m_Name: USB_Drive
   m_EditorClassIdentifier: 
-  itemName: Ingredient
-  flavorText: 
+  itemName: USB_Drive
+  flavorText: I CAN TASTE THE DATA
   type: 0
   smell: 0
-  flavor: 0
-  appearance: 0
-  texture: 0
+  flavor: 4
+  appearance: 3
+  texture: 4
   sprite: {fileID: 0}

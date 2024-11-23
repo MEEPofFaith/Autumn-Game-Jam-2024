@@ -12,10 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d057cc7459be88349894f25397181ac7, type: 3}
   m_Name: Logan_Paul_Fan
   m_EditorClassIdentifier: 
-  species: 0
-  customerName: 
-  request: 
+  customerName: Logan Paul Fan
+  request: Give me the finest lunch to ever exist!
+  type: 0
   normal: {fileID: 0}
   ants: {fileID: 0}
   parasite: {fileID: 0}
-  preferenceList: []
+  preferenceList:
+  - ing|Lunchly
+  fail: This SUCKS!
+  pass: This SUCKS!
+  passCond:
+  - 
+  success: "I love Lunchly! *sings* I\u2019m in the thick of it\u2026"

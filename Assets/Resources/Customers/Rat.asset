@@ -12,7 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d057cc7459be88349894f25397181ac7, type: 3}
   m_Name: Rat
   m_EditorClassIdentifier: 
-  species: 0
-  type: 0
-  animalName: 
+  customerName: Rat
   request: 
+  type: 0
+  normal: {fileID: 0}
+  ants: {fileID: 0}
+  parasite: {fileID: 0}
+  preferenceList:
+  - ing|Pizza Slice
+  - stat|0|3|5
+  - stat|1|3|5
+  fail: "I didn\u2019t order this."
+  pass: "Okay\u2026but\u2026"
+  passCond:
+  - "Where\u2019s my pizza?"
+  - "It doesn\u2019t smell that much."
+  - It tastes bland.
+  success: Thank you!

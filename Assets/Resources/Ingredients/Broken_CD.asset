@@ -16,7 +16,7 @@ MonoBehaviour:
   flavorText: mmmmmmmmmmmm crunchy
   type: 0
   smell: 0
-  flavor: 0
-  appearance: 0
-  texture: 0
+  flavor: 3
+  appearance: 2
+  texture: 5
   sprite: {fileID: 0}

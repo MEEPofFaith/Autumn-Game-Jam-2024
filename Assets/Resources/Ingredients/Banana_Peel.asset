@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb8d536cba47fd744b018ee65dc55f26, type: 3}
   m_Name: Banana_Peel
   m_EditorClassIdentifier: 
-  itemName: Ingredient
-  flavorText: 
+  itemName: Banana Peel
+  flavorText: Don't slip on your food!
   type: 0
-  smell: 0
-  flavor: 0
-  appearance: 0
-  texture: 0
+  smell: 2
+  flavor: 2
+  appearance: 3
+  texture: 4
   sprite: {fileID: 0}

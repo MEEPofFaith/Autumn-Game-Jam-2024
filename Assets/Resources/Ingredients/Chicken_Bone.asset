@@ -15,8 +15,8 @@ MonoBehaviour:
   itemName: Chicken Bone
   flavorText: 
   type: 0
-  smell: 0
-  flavor: 0
-  appearance: 0
-  texture: 0
+  smell: 3
+  flavor: 1
+  appearance: 2
+  texture: 3
   sprite: {fileID: 0}

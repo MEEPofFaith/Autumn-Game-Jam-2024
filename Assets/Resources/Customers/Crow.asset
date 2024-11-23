@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d057cc7459be88349894f25397181ac7, type: 3}
   m_Name: Crow
   m_EditorClassIdentifier: 
-  species: 5
-  customerName: 
+  customerName: Crow
   request: 
+  type: 0
   normal: {fileID: 0}
   ants: {fileID: 0}
   parasite: {fileID: 0}
@@ -22,3 +22,10 @@ MonoBehaviour:
   - ing|Chicken Bone
   - stat|0|0|2
   - stat|2|0|2
+  fail: "Um\u2026I\u2019m not hungry anymore."
+  pass: "Um\u2026"
+  passCond:
+  - "Where\u2019s my bone?"
+  - "It\u2026smells."
+  - "I usually like it less\u2026overwhelming."
+  success: Th-thank you.

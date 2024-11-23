@@ -12,7 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d057cc7459be88349894f25397181ac7, type: 3}
   m_Name: Skunk
   m_EditorClassIdentifier: 
-  species: 0
-  type: 0
-  animalName: 
+  customerName: Skunk
   request: 
+  type: 0
+  normal: {fileID: 0}
+  ants: {fileID: 0}
+  parasite: {fileID: 0}
+  preferenceList:
+  - ing|Poop
+  - stat|0|3|5
+  - stat|3|0|2
+  fail: "Just\u2026don\u2019t."
+  pass: 
+  passCond:
+  - "Where\u2019s the poop?"
+  - This is what you call smelly?
+  - "Texture\u2019s way too much."
+  success: Thanks. You have a good one.

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb8d536cba47fd744b018ee65dc55f26, type: 3}
   m_Name: Poop
   m_EditorClassIdentifier: 
-  itemName: Ingredient
-  flavorText: 
+  itemName: Poop
+  flavorText: Who did this come from?
   type: 0
-  smell: 0
-  flavor: 0
+  smell: 5
+  flavor: 5
   appearance: 0
-  texture: 0
+  texture: 2
   sprite: {fileID: 0}
