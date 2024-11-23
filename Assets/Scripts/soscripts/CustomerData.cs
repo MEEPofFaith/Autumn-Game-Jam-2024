@@ -28,7 +28,7 @@ public class CustomerData : ScriptableObject {
             if(prefData[0] == "ing"){ //First is type
                 IngredientPreference pref = new IngredientPreference();
                 pref.requested = prefData[1]; //Second is name of ingredient
-                pref.minRequired = int.Parse(prefData[2]); //Third is amount
+                if(prefData.Length == 3) pref.minRequired = int.Parse(prefData[2]); //Third is amount
                 preferences[i] = pref;
             }else if(prefData[0] == "stat"){
                 StatPreference pref = new StatPreference();
@@ -42,6 +42,6 @@ public class CustomerData : ScriptableObject {
     }
 
     public enum Species{
-        raccoon, rat, opossum, squirrel, skunk, bird
+        raccoon, rat, opossum, squirrel, skunk, bird, loganPaulFan
     }
 }

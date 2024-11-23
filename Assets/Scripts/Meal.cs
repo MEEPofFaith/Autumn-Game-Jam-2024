@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Numerics;
+using Unity.Mathematics;
 using static IngredientData;
 
 public class Meal{
@@ -7,29 +8,16 @@ public class Meal{
 
     public float[] getStats(){
         float[] stats = new float[System.Enum.GetValues(typeof(IngredientStat)).Length];
-        int[] counts = new int[stats.Length];
 
         foreach(IngredientData ing in ingredients){
-            if(ing.type == IngredientType.ingredient || ing.smell >= 0){ //Ingredient -> Always add | Seasoning -> Only add if has value
-                stats[(int)IngredientStat.smell] += ing.smell;
-                counts[(int)IngredientStat.smell]++;
-            }
-            if(ing.type == IngredientType.ingredient || ing.flavor >= 0){
-                stats[(int)IngredientStat.flavor] += ing.flavor;
-                counts[(int)IngredientStat.flavor]++;
-            }
-            if(ing.type == IngredientType.ingredient || ing.appearance >= 0){
-                stats[(int)IngredientStat.appearance] += ing.appearance;
-                counts[(int)IngredientStat.appearance]++;
-            }
-            if(ing.type == IngredientType.ingredient || ing.smell >= 0){
-                stats[(int)IngredientStat.texture] += ing.texture;
-                counts[(int)IngredientStat.texture]++;
-            }
+            stats[(int)IngredientStat.smell] += ing.smell;
+            stats[(int)IngredientStat.flavor] += ing.flavor;
+            stats[(int)IngredientStat.appearance] += ing.appearance;
+            stats[(int)IngredientStat.texture] += ing.texture;
         }
 
         for(int i = 0; i < stats.Length; i++){
-            stats[i] /= counts[i]; //Average
+            stats[i] = math.clamp(stats[i] / 5, 0, 5);
         }
 
         return stats;
