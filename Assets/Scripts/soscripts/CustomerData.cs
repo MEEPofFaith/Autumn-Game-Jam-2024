@@ -1,10 +1,12 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CustomerData", menuName = "Customer", order = 0)]
 public class CustomerData : ScriptableObject {
     public string customerName;
     public string request;
+    public CustomerType type = CustomerType.normal;
 
     //Sprites
     public Sprite normal;
@@ -15,7 +17,54 @@ public class CustomerData : ScriptableObject {
     public string[] preferenceList;
     public IPreferences[] preferences;
 
+    public string fail;
+    public string pass;
+    public string[] passCond;
+    public string success;
+
     private bool init = false;
+
+    public string nameText(){
+        if(type != CustomerType.normal){
+            return name + "?";
+        }
+        return name;
+    }
+
+    public string requestText(){
+        if(type == CustomerType.ants){
+            return "...";
+        }
+        string text = request;
+        if(type == CustomerType.parasite) text = scrambleText(text);
+        return text;
+    }
+
+    public string failText(){
+        if(type == CustomerType.ants){
+            return "...";
+        }
+        string text = fail;
+        if(type == CustomerType.parasite) text = scrambleText(text);
+        return text;
+    }
+
+    public string passText(int failed){
+        if(type == CustomerType.ants){
+            return "...";
+        }
+        string text = pass + " (" + passCond[failed] + ")";
+        if(type == CustomerType.parasite) text = scrambleText(text);
+        return text;
+    }
+
+    public string successText(){
+        if(type == CustomerType.ants){
+            return "...";
+        }
+        string text = success;
+        if(type == CustomerType.parasite) text = scrambleText(text);
+        return text;
 
     //Parses array of strings into an array of preferences. Cursed, I know.
     public void initPreferences(){
@@ -38,5 +87,24 @@ public class CustomerData : ScriptableObject {
             }
         }
         init = true;
+    }
+
+    public static string scrambleText(string toScramble){
+            // https://stackoverflow.com/questions/18673619/randomizing-a-string
+
+            List<char> original = new List<char>(toScramble.ToCharArray());
+            List<char> randomized = new List<char>();
+            
+            for(int size = original.Count; size > 0; size--){
+                int index = Random.Range(0, size);
+                randomized.Add(original[index]);
+                original.RemoveAt(index);
+            }
+
+            return new string(randomized.ToArray());
+    }
+
+    public enum CustomerType{
+        normal, ants, parasite
     }
 }
