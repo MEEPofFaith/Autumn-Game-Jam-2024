@@ -10,9 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d057cc7459be88349894f25397181ac7, type: 3}
-  m_Name: Bird
+  m_Name: Crow
   m_EditorClassIdentifier: 
-  species: 0
-  type: 0
-  animalName: 
+  species: 5
+  customerName: 
   request: 
+  normal: {fileID: 0}
+  ants: {fileID: 0}
+  parasite: {fileID: 0}
+  preferenceList:
+  - ing|Chicken Bone
+  - stat|0|0|2
+  - stat|2|0|2

@@ -3,7 +3,6 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "CustomerData", menuName = "Customer", order = 0)]
 public class CustomerData : ScriptableObject {
-    public Species species = Species.raccoon;
     public string customerName;
     public string request;
 
@@ -39,9 +38,5 @@ public class CustomerData : ScriptableObject {
             }
         }
         init = true;
-    }
-
-    public enum Species{
-        raccoon, rat, opossum, squirrel, skunk, bird, loganPaulFan
     }
 }
