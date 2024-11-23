@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Ingredient", menuName = "Ingredient", order = 1)]
+[CreateAssetMenu(fileName = "IngredientData", menuName = "Ingredient", order = 1)]
 public class IngredientData : ScriptableObject{
     public int smell;
     public int flavor;
@@ -10,5 +10,5 @@ public class IngredientData : ScriptableObject{
     public string itemName = "Ingredient";
     public string flavorText = "";
 
-    public Sprite image;
+    public Sprite sprite;
 }
