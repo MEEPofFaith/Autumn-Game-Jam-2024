@@ -7,14 +7,21 @@ public class IngredientData : ScriptableObject{
 
     public IngredientType type = IngredientType.ingredient;
 
-    public int smell;
-    public int flavor;
-    public int appearance;
-    public int texture; //mmmm cronchy
+    public int smell; //fragrant - pungent
+    public int flavor; // ???
+    public int appearance; // "appealing" - disgusting
+    public int texture; // slimy - gravely
 
     public Sprite sprite;
 
     public enum IngredientType{
         ingredient, seasoning
+    }
+
+    public enum IngredientStat{
+        smell,
+        flavor,
+        appearance,
+        texture
     }
 }
