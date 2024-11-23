@@ -15,9 +15,9 @@ MonoBehaviour:
   customerName: Crow
   request: 
   type: 0
-  normal: {fileID: 0}
-  ants: {fileID: 0}
-  parasite: {fileID: 0}
+  normal: {fileID: -65130337, guid: a1d5b776d7667e74cb6a10d509133361, type: 3}
+  ants: {fileID: -829616702, guid: a1d5b776d7667e74cb6a10d509133361, type: 3}
+  parasite: {fileID: -1128427996, guid: a1d5b776d7667e74cb6a10d509133361, type: 3}
   preferenceList:
   - ing|Chicken Bone
   - stat|0|0|2

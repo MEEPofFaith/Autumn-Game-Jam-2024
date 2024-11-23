@@ -17,5 +17,9 @@ public class Data : MonoBehaviour {
         ingredients = Resources.LoadAll<IngredientData>("Ingredients/").ToList<IngredientData>();
         seasonings = Resources.LoadAll<IngredientData>("Seasonings/").ToList<IngredientData>();
         customers = Resources.LoadAll<CustomerData>("Customers/").ToList<CustomerData>();
+
+        foreach(CustomerData cus in customers){
+            cus.initPreferences();
+        }
     }
 }

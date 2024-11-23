@@ -15,9 +15,9 @@ MonoBehaviour:
   customerName: Raccoon
   request: 
   type: 0
-  normal: {fileID: 0}
-  ants: {fileID: 0}
-  parasite: {fileID: 0}
+  normal: {fileID: 502891943, guid: f2e63bc27a78fdf43b4dc28556a830de, type: 3}
+  ants: {fileID: -1705378176, guid: f2e63bc27a78fdf43b4dc28556a830de, type: 3}
+  parasite: {fileID: 400183724, guid: f2e63bc27a78fdf43b4dc28556a830de, type: 3}
   preferenceList:
   - ing|Candy Wrapper
   - stat|0|1|3

@@ -15,9 +15,9 @@ MonoBehaviour:
   customerName: Squirrel
   request: 
   type: 0
-  normal: {fileID: 0}
-  ants: {fileID: 0}
-  parasite: {fileID: 0}
+  normal: {fileID: 1835464295, guid: f655704f769ec574cb5f4f162e442837, type: 3}
+  ants: {fileID: -73842652, guid: f655704f769ec574cb5f4f162e442837, type: 3}
+  parasite: {fileID: 759513437, guid: f655704f769ec574cb5f4f162e442837, type: 3}
   preferenceList:
   - ing|Rubber Boot Heel
   - stat|2|0|2
