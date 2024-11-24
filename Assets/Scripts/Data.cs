@@ -22,4 +22,25 @@ public class Data : MonoBehaviour {
             cus.initPreferences();
         }
     }
+
+    public static IngredientData getIngredient(string itemName){
+        foreach(IngredientData data in ingredients){
+            if(data.itemName == itemName) return data;
+        }
+        return null;
+    }
+
+    public static IngredientData getSeasoning(string itemName){
+        foreach(IngredientData data in seasonings){
+            if(data.itemName == itemName) return data;
+        }
+        return null;
+    }
+
+    public static CustomerData getCustomer(string customerName){
+        foreach(CustomerData data in customers){
+            if(data.customerName == customerName) return data;
+        }
+        return null;
+    }
 }

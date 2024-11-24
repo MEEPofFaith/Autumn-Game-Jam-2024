@@ -8,6 +8,8 @@ public class MainManager : MonoBehaviour
 
     public Meal currentMeal = new Meal();
 
+    public Dictionary<string, int> served = new Dictionary<string, int>();
+
     private int test = 0;
     private float count = 5;
     public float testDelay = 1;
@@ -26,7 +28,6 @@ public class MainManager : MonoBehaviour
 
     public void addIngredient(IngredientData data){
         if(data.type == IngredientData.IngredientType.ingredient){ //If ingredient, add until full
-            Debug.Log("Trying to add... " + data.itemName);
             if(currentMeal.ingredients.Count < 5){
                 currentMeal.ingredients.Add(data);
             }

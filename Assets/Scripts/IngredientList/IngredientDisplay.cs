@@ -9,6 +9,7 @@ public class IngredientDisplay : MonoBehaviour
     public Sprite[] numSprites;
     public SpriteRenderer[] numRenders;
     public SpriteRenderer[] itemRenders;
+    public GameObject[] delButtons;
 
 
     private void Awake() {
@@ -33,6 +34,8 @@ public class IngredientDisplay : MonoBehaviour
                 int count = items[data.itemName];
                 numRenders[item].sprite = numSprites[count];
                 itemRenders[item].sprite = data.itemSprite;
+                delButtons[item].SetActive(true);
+                delButtons[item].GetComponent<IngRemoveButton>().ingredient = data;
                 item++;
             }
         }
@@ -40,6 +43,7 @@ public class IngredientDisplay : MonoBehaviour
         for(int i = item; i < 5; i++){
             numRenders[i].sprite = null;
             itemRenders[i].sprite = null;
+            delButtons[item].SetActive(false);
         }
     }
 }
