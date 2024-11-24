@@ -78,6 +78,8 @@ public class Customer : MonoBehaviour {
     public int score(Meal m){
         int passed = 0;
         foreach(IPreferences pref in data.preferences){
+            var nol = pref as NoLunchlyPreference;
+            if(nol != null && !pref.valid(m)) return 0; //INSTANT FAIL
             if(pref.valid(m)) passed++;
         }
         if(passed == data.preferences.Length) passed++; //Bonus for completing all.
