@@ -34,7 +34,7 @@ public class Customer : MonoBehaviour {
                 break;
             case CustomerState.wait:
                 if(Plate.Instance.arrived()){
-                    state = CustomerState.exit;
+                    state = CustomerState.served;
 
                     dialog.SetText(feedback(MainManager.Instance.currentMeal));
                     MainManager.Instance.serveMeal();
@@ -42,12 +42,18 @@ public class Customer : MonoBehaviour {
                     delayTimer = 2f;
                 }
                 break;
-            case CustomerState.exit:
+            case CustomerState.served:
                 if(delayTimer > 0 || !CameraManager.Instance.returned()){
                     delayTimer -= Time.deltaTime;
                     break;
                 }
 
+                state = CustomerState.exit;
+                Plate.Instance.toggle(true);
+                Pot.Instance.toggle(false);
+
+                break;
+            case CustomerState.exit:
                 pos = gameObject.transform.position.x + speed * Time.deltaTime;
                 gameObject.transform.position = new Vector3(pos, gameObject.transform.position.y, gameObject.transform.position.z);
 
@@ -57,6 +63,7 @@ public class Customer : MonoBehaviour {
 
                     dialogBox.SetActive(false);
                 }
+
                 break;
         }
     }
@@ -100,7 +107,10 @@ public class Customer : MonoBehaviour {
         for(int i = 0; i < len; i++){
             bool passPref = data.preferences[i].valid(m);
             if(passPref) pass = true;
-            complete[i] = pass;
+            if(!passPref && data.preferences[i] as NoLunchlyPreference != null){
+                return data.passText(i);
+            }
+            complete[i] = passPref;
         }
 
         if(pass){
@@ -127,6 +137,6 @@ public class Customer : MonoBehaviour {
     }
 
     public enum CustomerState{
-        entry, wait, exit
+        entry, wait, served, exit
     }
 }

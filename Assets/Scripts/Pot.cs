@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using Unity.Mathematics;
 using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
 
 public class Pot : MonoBehaviour, IToggleable
 {
@@ -22,11 +24,8 @@ public class Pot : MonoBehaviour, IToggleable
         if(state == up) return;
         up = state;
 
+        Vector3 pos;
         if(state){
-            Vector3 pos = gameObject.transform.position;
-            pos.y = -23.5f;
-            gameObject.transform.position = pos;
-
             pos = spork.transform.localPosition;
             pos.y = 42;
             spork.transform.localPosition = pos;
@@ -34,6 +33,14 @@ public class Pot : MonoBehaviour, IToggleable
             foreach(FlavorBar bar in FlavorBar.Instances){
                 bar.updateStars();
             }
+        }else{
+            pos = gameObject.transform.position;
+            pos.y = -23.5f;
+            gameObject.transform.position = pos;
+
+            pos = spork.transform.localPosition;
+            pos.y = 4;
+            spork.transform.localPosition = pos;
         }
     }
 
