@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Racoon
   m_EditorClassIdentifier: 
   customerName: Raccoon
-  request: 
-  type: 0
+  request: Give me something with low smell and hight appearance, and include a wrapper
+    with it!
+  normalOnly: 0
+  type: 1
   normal: {fileID: 502891943, guid: f2e63bc27a78fdf43b4dc28556a830de, type: 3}
   ants: {fileID: -1705378176, guid: f2e63bc27a78fdf43b4dc28556a830de, type: 3}
   parasite: {fileID: 400183724, guid: f2e63bc27a78fdf43b4dc28556a830de, type: 3}

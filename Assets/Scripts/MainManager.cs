@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class MainManager : MonoBehaviour
 {
@@ -11,8 +12,7 @@ public class MainManager : MonoBehaviour
 
     public Dictionary<string, int> served = new Dictionary<string, int>();
 
-    private int test = 0;
-    public float testDelay = 1;
+    public int totalScore = 0;
 
     private void Awake() {
         if(Instance != null) return;
@@ -69,11 +69,18 @@ public class MainManager : MonoBehaviour
         }
     }
 
+    public void serveMeal(){
+        Customer c = Customer.Instance;
+        totalScore += c.score(currentMeal);
+        clearIngredients();
+    }
+
     public CustomerData next(){
-        for(int i = 0; i < Data.customers.Count; i++){
+        /*for(int i = 0; i < Data.customers.Count; i++){
             test = (test + 1) % Data.customers.Count;
             if(Data.customers[test].normal != null) return Data.customers[test];
         }
-        return Data.customers[test];
+        return Data.customers[test];*/
+        return Data.customers[0]; //TODO
     }
 }

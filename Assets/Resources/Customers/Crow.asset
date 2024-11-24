@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Crow
   m_EditorClassIdentifier: 
   customerName: Crow
-  request: 
-  type: 1
+  request: Give me something with low smell and low appearance, and include a bone
+    with it!
+  normalOnly: 0
+  type: 0
   normal: {fileID: -65130337, guid: a1d5b776d7667e74cb6a10d509133361, type: 3}
   ants: {fileID: -829616702, guid: a1d5b776d7667e74cb6a10d509133361, type: 3}
   parasite: {fileID: -1128427996, guid: a1d5b776d7667e74cb6a10d509133361, type: 3}

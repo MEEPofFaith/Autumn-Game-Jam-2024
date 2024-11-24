@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Squirrel
   m_EditorClassIdentifier: 
   customerName: Squirrel
-  request: 
-  type: 1
+  request: Give me something with high texture and low appearance, and include a
+    boot with it!
+  normalOnly: 0
+  type: 2
   normal: {fileID: 1835464295, guid: f655704f769ec574cb5f4f162e442837, type: 3}
   ants: {fileID: -73842652, guid: f655704f769ec574cb5f4f162e442837, type: 3}
   parasite: {fileID: 759513437, guid: f655704f769ec574cb5f4f162e442837, type: 3}

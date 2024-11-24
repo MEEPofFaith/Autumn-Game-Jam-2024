@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
@@ -24,7 +25,11 @@ public class CameraManager : MonoBehaviour, IToggleable
     private void Update() {
         UnityEngine.Vector3 pos = gameObject.transform.position;
         pos.y -= panSpeed * Time.deltaTime * (down ? 1 : -1);
-        pos.y = math.clamp(pos.y, -14.25f, 0);
+        pos.y = math.clamp(pos.y, -12.75f, 1.4f);
         gameObject.transform.position = pos;
+    }
+
+    public bool returned(){
+        return gameObject.transform.position.y >= 1.4f;
     }
 }

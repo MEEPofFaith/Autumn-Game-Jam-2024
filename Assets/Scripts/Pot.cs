@@ -12,6 +12,7 @@ public class Pot : MonoBehaviour, IToggleable
     public float moveSpeed = 12f;
 
     public GameObject spork;
+    public GameObject meal;
 
     private void Awake() {
         Instance = this;
@@ -22,8 +23,12 @@ public class Pot : MonoBehaviour, IToggleable
         up = state;
 
         if(state){
-            Vector3 pos = spork.transform.localPosition;
-            pos.y = 35;
+            Vector3 pos = gameObject.transform.position;
+            pos.y = -23.5f;
+            gameObject.transform.position = pos;
+
+            pos = spork.transform.localPosition;
+            pos.y = 42;
             spork.transform.localPosition = pos;
 
             foreach(FlavorBar bar in FlavorBar.Instances){
@@ -34,19 +39,19 @@ public class Pot : MonoBehaviour, IToggleable
 
     // Update is called once per frame
     void Update(){
-        Vector3 pos = gameObject.transform.position;
-        pos.y += moveSpeed * Time.deltaTime * (up ? 1 : -1);
-        pos.y = math.clamp(pos.y, -23.5f, -16.9f);
-        gameObject.transform.position = pos;
-
-        pos = spork.transform.localPosition;
+        Vector3 sPos = spork.transform.localPosition;
         if(up){
-            pos.y -= moveSpeed * 2 * Time.deltaTime * (up ? 1 : -1);
-            pos.y = math.clamp(pos.y, 4f, 35f);
+            Vector3 pos = gameObject.transform.position;
+            pos.y += moveSpeed * Time.deltaTime;
+            pos.y = math.min(pos.y, -16.9f);
+            gameObject.transform.position = pos;
+
+            sPos.y -= moveSpeed * 2 * Time.deltaTime;
+            sPos.y = math.max(sPos.y, 4f);
         }
 
-        pos.x = (float)(math.sin(Time.time / stirInterval * math.PI_DBL) * 3f);
+        sPos.x = (float)(math.sin(Time.time / stirInterval * math.PI_DBL) * 3f);
 
-        spork.transform.localPosition = pos;
+        spork.transform.localPosition = sPos;
     }
 }

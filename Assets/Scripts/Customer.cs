@@ -11,6 +11,7 @@ public class Customer : MonoBehaviour {
     public TMP_Text dialog;
 
     private CustomerData data;
+    private float delayTimer = 2f;
 
     private void Awake() {
         if(Instance != null) Debug.LogError("Why are there two customer instances?");
@@ -18,26 +19,45 @@ public class Customer : MonoBehaviour {
     }
 
     private void Update() {
-        if(state == CustomerState.entry){
-            float pos = gameObject.transform.position.x - speed * Time.deltaTime;
-            if(arrived()){
-                pos = 0;
-                state = CustomerState.wait;
+        float pos;
+        switch(state){
+            case CustomerState.entry:
+                pos = gameObject.transform.position.x - speed * Time.deltaTime;
+                if(arrived()){
+                    pos = 0;
+                    state = CustomerState.wait;
 
-                dialogBox.SetActive(true);
-                dialog.SetText(data.requestText());
-            }
-            gameObject.transform.position = new Vector3(pos, gameObject.transform.position.y, gameObject.transform.position.z);
-        }else if(state == CustomerState.exit){
-            float pos = gameObject.transform.position.x + speed * Time.deltaTime;
-            gameObject.transform.position = new Vector3(pos, gameObject.transform.position.y, gameObject.transform.position.z);
+                    dialogBox.SetActive(true);
+                    dialog.SetText(data.requestText());
+                }
+                gameObject.transform.position = new Vector3(pos, gameObject.transform.position.y, gameObject.transform.position.z);
+                break;
+            case CustomerState.wait:
+                if(Plate.Instance.arrived()){
+                    state = CustomerState.exit;
 
-            if(exited()){
-                state = CustomerState.entry;
-                data = MainManager.Instance.next();
+                    dialog.SetText(feedback(MainManager.Instance.currentMeal));
+                    MainManager.Instance.serveMeal();
 
-                dialogBox.SetActive(false);
-            }
+                    delayTimer = 2f;
+                }
+                break;
+            case CustomerState.exit:
+                if(delayTimer > 0 || !CameraManager.Instance.returned()){
+                    delayTimer -= Time.deltaTime;
+                    break;
+                }
+
+                pos = gameObject.transform.position.x + speed * Time.deltaTime;
+                gameObject.transform.position = new Vector3(pos, gameObject.transform.position.y, gameObject.transform.position.z);
+
+                if(exited()){
+                    state = CustomerState.entry;
+                    data = MainManager.Instance.next();
+
+                    dialogBox.SetActive(false);
+                }
+                break;
         }
     }
 
@@ -69,6 +89,10 @@ public class Customer : MonoBehaviour {
     }
 
     public string feedback(Meal m){
+        if(data.preferences == null){ //How is this even possible
+            data.initPreferences();
+        }
+
         int len = data.preferences.Length;
         bool[] complete = new bool[len];
         bool pass = false;

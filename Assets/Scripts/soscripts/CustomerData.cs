@@ -79,6 +79,7 @@ public class CustomerData : ScriptableObject {
     //Parses array of strings into an array of preferences. Cursed, I know.
     public void initPreferences(){
         if(init) return;
+        init = true;
 
         preferences = new IPreferences[preferenceList.Length];
         for(int i = 0; i < preferenceList.Length; i++){
@@ -98,7 +99,6 @@ public class CustomerData : ScriptableObject {
                 preferences[i] = new NoLunchlyPreference();
             }
         }
-        init = true;
     }
 
     public static string scrambleText(string toScramble){
