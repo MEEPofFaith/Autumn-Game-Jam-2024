@@ -4,13 +4,18 @@ using System.Numerics;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class CameraManager : MonoBehaviour
+public class CameraManager : MonoBehaviour, IToggleable
 {
     public static CameraManager Instance;
 
     public bool down = false;
     public float panSpeed = 12f;
-    
+
+    public void toggle(bool state){
+        if(state == down) return;
+        down = state;
+    }
+
     private void Awake() {
         if(Instance != null) Debug.LogError("Too lazy to write a message");
         Instance = this;

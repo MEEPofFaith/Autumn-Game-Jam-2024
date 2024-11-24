@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 581eabb4851443446be2702709930794
+guid: b38d8fd3bd63445428f16b7410471eec
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: text_bubble
+      name: Pot_Front
       rect:
         serializedVersion: 2
-        x: 39
-        y: 746
-        width: 2654
-        height: 477
+        x: 27
+        y: 514
+        width: 1748
+        height: 959
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e414c579882ba8943b1b75abd718c43e
-      internalID: 2088221740
+      spriteID: 372c3a2cc3cfdcf418233788babc1bc5
+      internalID: -277871702
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: start_button
+      name: Pot_Spork
       rect:
         serializedVersion: 2
-        x: 612
-        y: 322
-        width: 429
-        height: 177
+        x: 1800
+        y: 547
+        width: 243
+        height: 851
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d862f100bbe5c314986cbbc11e76e6d0
-      internalID: 1355531335
+      spriteID: 258dd23da2af6de4a8c377ddb92039fd
+      internalID: -1904542946
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: finish_button
+      name: Pot_2
       rect:
         serializedVersion: 2
-        x: 1383
-        y: 317
-        width: 491
-        height: 205
+        x: 1142
+        y: 477
+        width: 8
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 828ae0b121bf30b43bfd80f0d900b146
-      internalID: 1545111831
+      spriteID: 806584dd5c2209b438101be2e9494f7b
+      internalID: 333563674
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cook_button
+      name: Pot_Back
       rect:
         serializedVersion: 2
-        x: 605
-        y: 108
-        width: 446
-        height: 178
+        x: 214
+        y: 49
+        width: 1045
+        height: 426
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36dd50ead6c502440a8cac0025ffd486
-      internalID: -2088447736
+      spriteID: bfedc133f0afc95439104356b3d06301
+      internalID: 1983284069
       vertices: []
       indices: 
       edges: []
@@ -191,10 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      cook_button: -2088447736
-      finish_button: 1545111831
-      start_button: 1355531335
-      text_bubble: 2088221740
+      Pot_2: 333563674
+      Pot_Back: 150550652
+      Pot_Front: -277871702
+      Pot_Spork: -1904542946
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
