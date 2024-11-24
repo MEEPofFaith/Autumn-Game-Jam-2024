@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rat
   m_EditorClassIdentifier: 
   customerName: Rat
-  request: 
+  request: Can I have a meal with a pizza slice? Make it extra smelly, with flavor!
   type: 0
   normal: {fileID: 21300000, guid: 68e03bbaf7e1a54428ad5dd9fdace086, type: 3}
   ants: {fileID: 0}

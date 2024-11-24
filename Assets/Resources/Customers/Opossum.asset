@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Opossum
   m_EditorClassIdentifier: 
   customerName: Opossum
-  request: 
+  request: I would like something with a banana peel. Something simple and not so
+    flavorful.
   type: 0
   normal: {fileID: -1427107275, guid: e51750906faee174dac2a33c486688be, type: 3}
   ants: {fileID: -363553027, guid: e51750906faee174dac2a33c486688be, type: 3}

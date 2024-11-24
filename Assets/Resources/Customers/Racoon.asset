@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: Racoon
   m_EditorClassIdentifier: 
   customerName: Raccoon
-  request: Give me something with low smell and hight appearance, and include a wrapper
-    with it!
-  normalOnly: 0
+  request: Can I have something with candy wrappers? Make it extravagant and not
+    smelly.
   type: 1
   normal: {fileID: 502891943, guid: f2e63bc27a78fdf43b4dc28556a830de, type: 3}
   ants: {fileID: -1705378176, guid: f2e63bc27a78fdf43b4dc28556a830de, type: 3}

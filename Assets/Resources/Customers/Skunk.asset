@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Skunk
   m_EditorClassIdentifier: 
   customerName: Skunk
-  request: 
+  request: Gimme something with poop. I like my meals smelly, with no texture.
   type: 0
   normal: {fileID: -967564459, guid: cc07aaf2354823d4a92f077e4d544819, type: 3}
   ants: {fileID: 1105604805, guid: cc07aaf2354823d4a92f077e4d544819, type: 3}
