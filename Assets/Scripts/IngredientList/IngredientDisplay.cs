@@ -43,7 +43,7 @@ public class IngredientDisplay : MonoBehaviour
         for(int i = item; i < 5; i++){
             numRenders[i].sprite = null;
             itemRenders[i].sprite = null;
-            delButtons[item].SetActive(false);
+            delButtons[i].SetActive(false);
         }
     }
 }
