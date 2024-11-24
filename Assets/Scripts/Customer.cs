@@ -136,6 +136,19 @@ public class Customer : MonoBehaviour {
         return passed * 2;
     }
 
+    public bool passes(Meal m){
+        int len = data.preferences.Length;
+        for(int i = 0; i < len; i++){
+            bool passPref = data.preferences[i].valid(m);
+            if(!passPref) return false;
+        }
+        return true;
+    }
+
+    public CustomerData getData(){
+        return data;
+    }
+
     public enum CustomerState{
         entry, wait, served, exit
     }

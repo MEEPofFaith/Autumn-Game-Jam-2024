@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
+using static CustomerData;
 
 public class MainManager : MonoBehaviour
 {
@@ -11,8 +12,9 @@ public class MainManager : MonoBehaviour
     public Meal currentMeal = new Meal();
 
     public Dictionary<string, int> served = new Dictionary<string, int>();
-
     public int totalScore = 0;
+    //Minimum number of perfect scores before ants/parasites of that customer begin to spawn.
+    public int minMod = 2;
 
     private void Awake() {
         if(Instance != null) return;
@@ -72,15 +74,34 @@ public class MainManager : MonoBehaviour
     public void serveMeal(){
         Customer c = Customer.Instance;
         totalScore += c.score(currentMeal);
+        if(c.passes(currentMeal)){
+            string key = c.getData().key();
+            if(!served.ContainsKey(key)){
+                served.Add(key, 1);
+            }else{
+                served[key]++;
+            }
+        }
+
         clearIngredients();
     }
 
     public CustomerData next(){
-        /*for(int i = 0; i < Data.customers.Count; i++){
-            test = (test + 1) % Data.customers.Count;
-            if(Data.customers[test].normal != null) return Data.customers[test];
+        CustomerData cust = Data.randomCustomer();
+        CustomerType type = CustomerType.normal;
+
+        string key = cust.key();
+        if(served.ContainsKey(key) && served[key] > minMod){ //Begin modifying after minMod perfect scores.
+            float rand = Random.Range(0, 1);
+            if(rand < 0.1f){ //10% chance for parasite
+                type = CustomerData.CustomerType.parasite;
+            }else if(rand < 0.35f){ //25% chance for ants
+                type = CustomerData.CustomerType.ants;
+            }
         }
-        return Data.customers[test];*/
-        return Data.customers[0]; //TODO
+
+        cust.setType(type);
+
+        return cust;
     }
 }

@@ -43,4 +43,8 @@ public class Data : MonoBehaviour {
         }
         return null;
     }
+
+    public static CustomerData randomCustomer(){
+        return customers[Random.Range(0, customers.Count)];
+    }
 }

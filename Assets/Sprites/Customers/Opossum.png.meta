@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f2e63bc27a78fdf43b4dc28556a830de
+guid: e51750906faee174dac2a33c486688be
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,43 +97,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Raccoon
+      name: Opossum
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1664
-        height: 2055
+        width: 3142
+        height: 1413
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5a61d9a092cc2945986f4c562760f62
-      internalID: 502891943
+      spriteID: 7cf1a876b835edc48afafcc7d23412e4
+      internalID: -1427107275
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Raccoon_Ants
+      name: Opossum_Ants
       rect:
         serializedVersion: 2
-        x: 1664
+        x: 3142
         y: 0
-        width: 1664
-        height: 2055
+        width: 3142
+        height: 1413
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2808eb946b91db4c9596ec8501d5404
-      internalID: -1705378176
+      spriteID: e3728b3c1b5735c4987a77007c822bb7
+      internalID: -363553027
       vertices: []
       indices: 
       edges: []
@@ -149,8 +149,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Raccoon: 502891943
-      Raccoon_Ants: -1705378176
+      Opossum: -1427107275
+      Opossum_Ants: -363553027
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

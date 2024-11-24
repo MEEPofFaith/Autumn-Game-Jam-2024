@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class CameraManager : MonoBehaviour, IToggleable
 {
@@ -13,7 +14,7 @@ public class CameraManager : MonoBehaviour, IToggleable
     public float panSpeed = 12f;
 
     public void toggle(bool state){
-        if(state == down) return;
+        if(state == down || !Customer.Instance.arrived()) return;
         down = state;
     }
 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f2e63bc27a78fdf43b4dc28556a830de
+guid: cc07aaf2354823d4a92f077e4d544819
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Raccoon
+      name: Skunk
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1664
-        height: 2055
+        width: 1306
+        height: 1676
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5a61d9a092cc2945986f4c562760f62
-      internalID: 502891943
+      spriteID: 049f03e5bd78e50429e66811cb55feb7
+      internalID: -967564459
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Raccoon_Ants
+      name: Skunk_Ants
       rect:
         serializedVersion: 2
-        x: 1664
+        x: 1306
         y: 0
-        width: 1664
-        height: 2055
+        width: 1306
+        height: 1676
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,8 +132,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2808eb946b91db4c9596ec8501d5404
-      internalID: -1705378176
+      spriteID: 15ad2ecaed634bf46ae1b5c180ebd1fe
+      internalID: 1105604805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skunk_Parasite
+      rect:
+        serializedVersion: 2
+        x: 2612
+        y: 0
+        width: 1306
+        height: 1676
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a43c6897e928b6459434c741f3386f1
+      internalID: -880308288
       vertices: []
       indices: 
       edges: []
@@ -149,8 +170,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Raccoon: 502891943
-      Raccoon_Ants: -1705378176
+      Skunk: -967564459
+      Skunk_Ants: 1105604805
+      Skunk_Parasite: -880308288
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

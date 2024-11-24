@@ -6,7 +6,6 @@ using UnityEngine;
 public class CustomerData : ScriptableObject {
     public string customerName;
     public string request;
-    public bool normalOnly = false;
     public CustomerType type = CustomerType.normal;
 
     //Sprites
@@ -22,6 +21,16 @@ public class CustomerData : ScriptableObject {
     public string pass;
     public string[] passCond;
     public string success;
+
+    public string key(){
+        string key = name;
+        if(type == CustomerData.CustomerType.ants){
+            key += "_ants";
+        }else if(type == CustomerData.CustomerType.parasite){
+            key += "_parasite";
+        }
+        return key;
+    }
 
     public string nameText(){
         if(type != CustomerType.normal){
@@ -67,11 +76,17 @@ public class CustomerData : ScriptableObject {
     }
 
     public void setType(CustomerType type){
-        if(normalOnly){
-            this.type = CustomerType.normal;
-        }else{
-            this.type = type;
-        }
+        if(type == CustomerType.ants && !canAnts()) type = CustomerType.normal;
+        if(type == CustomerType.parasite && !canParasite()) type = CustomerType.normal;
+        this.type = type;
+    }
+
+    public bool canAnts(){
+        return ants != null;
+    }
+
+    public bool canParasite(){
+        return parasite != null;
     }
 
     //Parses array of strings into an array of preferences. Cursed, I know.
