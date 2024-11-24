@@ -59,7 +59,7 @@ public class Customer : MonoBehaviour {
 
                 if(exited()){
                     state = CustomerState.entry;
-                    data = MainManager.Instance.next();
+                    init(MainManager.Instance.next());
 
                     dialogBox.SetActive(false);
                 }
