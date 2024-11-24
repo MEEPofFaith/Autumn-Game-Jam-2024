@@ -15,8 +15,8 @@ MonoBehaviour:
   customerName: Opossum
   request: 
   type: 0
-  normal: {fileID: 0}
-  ants: {fileID: 0}
+  normal: {fileID: -1427107275, guid: e51750906faee174dac2a33c486688be, type: 3}
+  ants: {fileID: -363553027, guid: e51750906faee174dac2a33c486688be, type: 3}
   parasite: {fileID: 0}
   preferenceList:
   - nol

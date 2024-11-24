@@ -328,6 +328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalScore: 0
+  minMod: 2
 --- !u!4 &207201796
 Transform:
   m_ObjectHideFlags: 0

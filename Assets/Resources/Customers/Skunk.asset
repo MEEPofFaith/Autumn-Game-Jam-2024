@@ -15,9 +15,9 @@ MonoBehaviour:
   customerName: Skunk
   request: 
   type: 0
-  normal: {fileID: 0}
-  ants: {fileID: 0}
-  parasite: {fileID: 0}
+  normal: {fileID: -967564459, guid: cc07aaf2354823d4a92f077e4d544819, type: 3}
+  ants: {fileID: 1105604805, guid: cc07aaf2354823d4a92f077e4d544819, type: 3}
+  parasite: {fileID: -880308288, guid: cc07aaf2354823d4a92f077e4d544819, type: 3}
   preferenceList:
   - nol
   - ing|Poop

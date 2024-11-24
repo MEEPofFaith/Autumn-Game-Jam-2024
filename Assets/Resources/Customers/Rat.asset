@@ -15,7 +15,7 @@ MonoBehaviour:
   customerName: Rat
   request: 
   type: 0
-  normal: {fileID: 0}
+  normal: {fileID: 21300000, guid: 68e03bbaf7e1a54428ad5dd9fdace086, type: 3}
   ants: {fileID: 0}
   parasite: {fileID: 0}
   preferenceList:
