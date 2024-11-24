@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Customer : MonoBehaviour {
@@ -6,6 +7,8 @@ public class Customer : MonoBehaviour {
 
     public CustomerState state = CustomerState.entry;
     public float speed;
+    public GameObject dialogBox;
+    public TMP_Text dialog;
 
     private CustomerData data;
 
@@ -17,18 +20,29 @@ public class Customer : MonoBehaviour {
     private void Update() {
         if(state == CustomerState.entry){
             float pos = gameObject.transform.position.x - speed * Time.deltaTime;
-            if(pos < 0){
+            if(arrived()){
                 pos = 0;
                 state = CustomerState.wait;
+
+                dialogBox.SetActive(true);
+                dialog.SetText(data.requestText());
             }
             gameObject.transform.position = new Vector3(pos, gameObject.transform.position.y, gameObject.transform.position.z);
         }else if(state == CustomerState.exit){
-            gameObject.transform.position = new Vector3(gameObject.transform.position.x + speed * Time.deltaTime, gameObject.transform.position.y, gameObject.transform.position.z);
+            float pos = gameObject.transform.position.x + speed * Time.deltaTime;
+            gameObject.transform.position = new Vector3(pos, gameObject.transform.position.y, gameObject.transform.position.z);
+
+            if(exited()){
+                state = CustomerState.entry;
+                data = MainManager.Instance.next();
+
+                dialogBox.SetActive(false);
+            }
         }
     }
 
     public bool arrived(){
-        return gameObject.transform.position.x == 0;
+        return gameObject.transform.position.x <= 0;
     }
 
     public bool exited(){
@@ -51,6 +65,7 @@ public class Customer : MonoBehaviour {
 
         gameObject.transform.position = new Vector3(11, gameObject.transform.position.y, gameObject.transform.position.z);
         state = CustomerState.entry;
+        this.data = data;
     }
 
     public string feedback(Meal m){

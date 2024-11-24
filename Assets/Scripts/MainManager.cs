@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class MainManager : MonoBehaviour
@@ -11,7 +12,6 @@ public class MainManager : MonoBehaviour
     public Dictionary<string, int> served = new Dictionary<string, int>();
 
     private int test = 0;
-    private float count = 5;
     public float testDelay = 1;
 
     private void Awake() {
@@ -22,6 +22,7 @@ public class MainManager : MonoBehaviour
     }
 
     private void Start() {
+        Data.customers[0].type = CustomerData.CustomerType.normal;
         Customer.Instance.init(Data.customers[0]);
         updateDisplay();
     }
@@ -68,25 +69,11 @@ public class MainManager : MonoBehaviour
         }
     }
 
-    private void Update() {
-        if(Customer.Instance.state == Customer.CustomerState.wait && Customer.Instance.arrived()){
-            count -= Time.deltaTime;
-            if(count < 0){
-                count = testDelay;
-                Customer.Instance.state = Customer.CustomerState.exit;
-            }
-        }else if(Customer.Instance.state == Customer.CustomerState.exit && Customer.Instance.exited()){
-            test = next();
-            Data.customers[test].setType((CustomerData.CustomerType)Random.Range(0, 3));
-            Customer.Instance.init(Data.customers[test]);
-        }
-    }
-
-    private int next(){
+    public CustomerData next(){
         for(int i = 0; i < Data.customers.Count; i++){
             test = (test + 1) % Data.customers.Count;
-            if(Data.customers[test].normal != null) return test;
+            if(Data.customers[test].normal != null) return Data.customers[test];
         }
-        return test;
+        return Data.customers[test];
     }
 }
