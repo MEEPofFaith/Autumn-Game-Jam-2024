@@ -85,6 +85,8 @@ public class CustomerData : ScriptableObject {
                 pref.min = float.Parse(prefData[2]); //Third is min
                 pref.max = float.Parse(prefData[3]); //Fourth is max
                 preferences[i] = pref;
+            }else if(prefData[0] == "nol"){
+                preferences[i] = new NoLunchlyPreference();
             }
         }
         init = true;
