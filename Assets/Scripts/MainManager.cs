@@ -8,6 +8,7 @@ public class MainManager : MonoBehaviour
 
     private int test = 0;
     private float count = 5;
+    public float testDelay = 1;
 
     private void Awake() {
         if(Instance != null) return;
@@ -21,13 +22,13 @@ public class MainManager : MonoBehaviour
     }
 
     private void Update() {
-        if(Customer.Instance.arrived()){
+        if(Customer.Instance.state == Customer.CustomerState.wait && Customer.Instance.arrived()){
             count -= Time.deltaTime;
             if(count < 0){
-                count = 1.5f;
+                count = testDelay;
                 Customer.Instance.state = Customer.CustomerState.exit;
             }
-        }else if(Customer.Instance.exited()){
+        }else if(Customer.Instance.state == Customer.CustomerState.exit && Customer.Instance.exited()){
             test = next();
             Customer.Instance.init(Data.customers[test]);
         }
