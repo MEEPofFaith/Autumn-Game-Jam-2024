@@ -55,7 +55,9 @@ public class MainManager : MonoBehaviour
 
     public void updateDisplay(){
         TempStats.Instance.updateText();
-        IngredientDisplay.Instance.updateDisplay();
+        foreach(IngredientDisplay disp in IngredientDisplay.Instances){
+            disp.updateDisplay();
+        }
     }
 
     private void Update() {

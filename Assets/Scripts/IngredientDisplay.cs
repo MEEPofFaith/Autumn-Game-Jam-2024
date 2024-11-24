@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IngredientDisplay : MonoBehaviour
 {
-    public static IngredientDisplay Instance;
+    public static List<IngredientDisplay> Instances = new List<IngredientDisplay>();
 
     public Sprite[] numSprites;
     public SpriteRenderer[] numRenders;
@@ -12,8 +12,7 @@ public class IngredientDisplay : MonoBehaviour
 
 
     private void Awake() {
-        if(Instance != null) Debug.LogError("WhAT");
-        Instance = this;
+        Instances.Add(this);
     }
 
     // Start is called before the first frame update
