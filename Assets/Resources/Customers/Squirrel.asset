@@ -14,17 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerName: Squirrel
   request: 
-  type: 0
+  type: 1
   normal: {fileID: 1835464295, guid: f655704f769ec574cb5f4f162e442837, type: 3}
   ants: {fileID: -73842652, guid: f655704f769ec574cb5f4f162e442837, type: 3}
   parasite: {fileID: 759513437, guid: f655704f769ec574cb5f4f162e442837, type: 3}
   preferenceList:
+  - nol
   - ing|Rubber Boot Heel
   - stat|2|0|2
   - stat|3|3|5
   fail: Did you even listen to my order?
   pass: "Thank you, but\u2026"
   passCond:
+  - Ugh...
   - Include the boot next time.
   - "Texture\u2019s kinda lacking."
   - "It\u2019s a bit...too much."

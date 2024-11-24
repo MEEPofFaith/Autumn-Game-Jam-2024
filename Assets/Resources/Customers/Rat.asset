@@ -19,12 +19,14 @@ MonoBehaviour:
   ants: {fileID: 0}
   parasite: {fileID: 0}
   preferenceList:
+  - nol
   - ing|Pizza Slice
   - stat|0|3|5
   - stat|1|3|5
   fail: "I didn\u2019t order this."
   pass: "Okay\u2026but\u2026"
   passCond:
+  - Why do you have Lunchly?
   - "Where\u2019s my pizza?"
   - "It doesn\u2019t smell that much."
   - It tastes bland.

@@ -19,12 +19,14 @@ MonoBehaviour:
   ants: {fileID: -1705378176, guid: f2e63bc27a78fdf43b4dc28556a830de, type: 3}
   parasite: {fileID: 400183724, guid: f2e63bc27a78fdf43b4dc28556a830de, type: 3}
   preferenceList:
+  - nol
   - ing|Candy Wrapper
   - stat|0|1|3
   - stat|2|3|5
   fail: "\u2026What is this?"
   pass: "Not bad\u2026I guess. But\u2026"
   passCond:
+  - I hate Lunchly.
   - "Where\u2019s the candy wrapper?"
   - "It\u2019s too smelly."
   - It looks kinda boring.

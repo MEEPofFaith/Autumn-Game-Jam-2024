@@ -14,17 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerName: Crow
   request: 
-  type: 0
+  type: 1
   normal: {fileID: -65130337, guid: a1d5b776d7667e74cb6a10d509133361, type: 3}
   ants: {fileID: -829616702, guid: a1d5b776d7667e74cb6a10d509133361, type: 3}
   parasite: {fileID: -1128427996, guid: a1d5b776d7667e74cb6a10d509133361, type: 3}
   preferenceList:
+  - nol
   - ing|Chicken Bone
   - stat|0|0|2
   - stat|2|0|2
   fail: "Um\u2026I\u2019m not hungry anymore."
   pass: "Um\u2026"
   passCond:
+  - Eww Lunchly...
   - "Where\u2019s my bone?"
   - "It\u2026smells."
   - "I usually like it less\u2026overwhelming."

@@ -19,12 +19,14 @@ MonoBehaviour:
   ants: {fileID: 0}
   parasite: {fileID: 0}
   preferenceList:
+  - nol
   - ing|Banana Peel
   - stat|1|1|3
   - stat|2|1|3
   fail: "I\u2019ll take it. But I won\u2019t like it."
   pass: "I\u2019ll take it. But\u2026"
   passCond:
+  - Even I wouldn't eat that...
   - "I don\u2019t taste no banana peel."
   - "It looks\u2026too much."
   - "It tastes\u2026too extra."
