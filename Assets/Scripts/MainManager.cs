@@ -21,6 +21,7 @@ public class MainManager : MonoBehaviour
 
     private void Start() {
         Customer.Instance.init(Data.customers[0]);
+        updateDisplay();
     }
 
     public void addIngredient(IngredientData data){
@@ -36,20 +37,25 @@ public class MainManager : MonoBehaviour
                 currentMeal.seasoning = data;
             }
         }
-        TempStats.Instance.updateText();
+        updateDisplay();
     }
 
     public void removeIngredient(IngredientData data){
         if(data.type == IngredientData.IngredientType.ingredient){
             currentMeal.ingredients.Remove(data);
         }
-        TempStats.Instance.updateText();
+        updateDisplay();
     }
 
     public void clearIngredients(){
         currentMeal.ingredients.Clear();
         currentMeal.seasoning = null;
+        updateDisplay();
+    }
+
+    public void updateDisplay(){
         TempStats.Instance.updateText();
+        IngredientDisplay.Instance.updateDisplay();
     }
 
     private void Update() {

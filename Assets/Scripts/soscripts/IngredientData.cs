@@ -13,6 +13,7 @@ public class IngredientData : ScriptableObject{
     public int texture; // slimy - gravely
 
     public Sprite sprite;
+    public Sprite itemSprite;
 
     public enum IngredientType{
         ingredient, seasoning

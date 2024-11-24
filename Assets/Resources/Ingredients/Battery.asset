@@ -20,3 +20,4 @@ MonoBehaviour:
   appearance: 1
   texture: 3
   sprite: {fileID: 21300000, guid: 23f2e927ae8ee1346825c47067a63ee8, type: 3}
+  itemSprite: {fileID: -1580536415, guid: cc3f5aa628df41e44a6e9f77eadc7680, type: 3}
