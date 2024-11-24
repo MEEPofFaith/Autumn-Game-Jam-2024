@@ -26,7 +26,13 @@ public class MainManager : MonoBehaviour
         updateDisplay();
     }
 
+    public bool canEditMeal(){
+        return CameraManager.Instance.down && !Pot.Instance.up;
+    }
+
     public void addIngredient(IngredientData data){
+        if(!canEditMeal()) return;
+
         if(data.type == IngredientData.IngredientType.ingredient){ //If ingredient, add until full
             if(currentMeal.ingredients.Count < 5){
                 currentMeal.ingredients.Add(data);
@@ -42,6 +48,8 @@ public class MainManager : MonoBehaviour
     }
 
     public void removeIngredient(IngredientData data){
+        if(!canEditMeal()) return;
+
         if(data.type == IngredientData.IngredientType.ingredient){
             currentMeal.ingredients.Remove(data);
         }
@@ -55,7 +63,6 @@ public class MainManager : MonoBehaviour
     }
 
     public void updateDisplay(){
-        TempStats.Instance.updateText();
         foreach(IngredientDisplay disp in IngredientDisplay.Instances){
             disp.updateDisplay();
         }

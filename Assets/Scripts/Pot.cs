@@ -5,11 +5,17 @@ using UnityEngine;
 
 public class Pot : MonoBehaviour, IToggleable
 {
+    public static Pot Instance;
+
     public bool up = false;
     public float stirInterval = 1f;
     public float moveSpeed = 12f;
 
     public GameObject spork;
+
+    private void Awake() {
+        Instance = this;
+    }
 
     public void toggle(bool state){
         if(state == up) return;
@@ -19,6 +25,10 @@ public class Pot : MonoBehaviour, IToggleable
             Vector3 pos = spork.transform.localPosition;
             pos.y = 35;
             spork.transform.localPosition = pos;
+
+            foreach(FlavorBar bar in FlavorBar.Instances){
+                bar.updateStars();
+            }
         }
     }
 
