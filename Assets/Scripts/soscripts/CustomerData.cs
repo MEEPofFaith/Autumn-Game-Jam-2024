@@ -23,8 +23,6 @@ public class CustomerData : ScriptableObject {
     public string[] passCond;
     public string success;
 
-    private bool init = false;
-
     public string nameText(){
         if(type != CustomerType.normal){
             return name + "?";
@@ -78,8 +76,7 @@ public class CustomerData : ScriptableObject {
 
     //Parses array of strings into an array of preferences. Cursed, I know.
     public void initPreferences(){
-        if(init) return;
-        init = true;
+        if(preferences != null) return;
 
         preferences = new IPreferences[preferenceList.Length];
         for(int i = 0; i < preferenceList.Length; i++){

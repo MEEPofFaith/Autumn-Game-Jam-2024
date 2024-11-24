@@ -90,6 +90,7 @@ public class Customer : MonoBehaviour {
 
     public string feedback(Meal m){
         if(data.preferences == null){ //How is this even possible
+            Debug.LogWarning("I don't know how this is even possible, but " + data.customerName + " needs to be re-initialized?????");
             data.initPreferences();
         }
 
