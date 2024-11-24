@@ -6,6 +6,7 @@ using UnityEngine;
 public class CustomerData : ScriptableObject {
     public string customerName;
     public string request;
+    public bool normalOnly = false;
     public CustomerType type = CustomerType.normal;
 
     //Sprites
@@ -65,6 +66,14 @@ public class CustomerData : ScriptableObject {
         string text = success;
         if(type == CustomerType.parasite) text = scrambleText(text);
         return text;
+    }
+
+    public void setType(CustomerType type){
+        if(normalOnly){
+            this.type = CustomerType.normal;
+        }else{
+            this.type = type;
+        }
     }
 
     //Parses array of strings into an array of preferences. Cursed, I know.

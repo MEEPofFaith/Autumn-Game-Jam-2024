@@ -70,7 +70,7 @@ public class MainManager : MonoBehaviour
             }
         }else if(Customer.Instance.state == Customer.CustomerState.exit && Customer.Instance.exited()){
             test = next();
-            Data.customers[test].type = (CustomerData.CustomerType)Random.Range(0, 3);
+            Data.customers[test].setType((CustomerData.CustomerType)Random.Range(0, 3));
             Customer.Instance.init(Data.customers[test]);
         }
     }
