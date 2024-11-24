@@ -6,6 +6,8 @@ public class MainManager : MonoBehaviour
 {
     public static MainManager Instance;
 
+    public Meal currentMeal = new Meal();
+
     private int test = 0;
     private float count = 5;
     public float testDelay = 1;
@@ -19,6 +21,35 @@ public class MainManager : MonoBehaviour
 
     private void Start() {
         Customer.Instance.init(Data.customers[0]);
+    }
+
+    public void addIngredient(IngredientData data){
+        if(data.type == IngredientData.IngredientType.ingredient){ //If ingredient, add until full
+            Debug.Log("Trying to add... " + data.itemName);
+            if(currentMeal.ingredients.Count < 5){
+                currentMeal.ingredients.Add(data);
+            }
+        }else{
+            if(currentMeal.seasoning == data){ //If seasoning, toggle/swap
+                currentMeal.seasoning = null;
+            }else{
+                currentMeal.seasoning = data;
+            }
+        }
+        TempStats.Instance.updateText();
+    }
+
+    public void removeIngredient(IngredientData data){
+        if(data.type == IngredientData.IngredientType.ingredient){
+            currentMeal.ingredients.Remove(data);
+        }
+        TempStats.Instance.updateText();
+    }
+
+    public void clearIngredients(){
+        currentMeal.ingredients.Clear();
+        currentMeal.seasoning = null;
+        TempStats.Instance.updateText();
     }
 
     private void Update() {

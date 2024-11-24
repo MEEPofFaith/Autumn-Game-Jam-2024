@@ -4,7 +4,7 @@ using Unity.Mathematics;
 using static IngredientData;
 
 public class Meal{
-    public List<IngredientData> ingredients;
+    public List<IngredientData> ingredients = new List<IngredientData>();
     public IngredientData seasoning;
 
     public float[] getStats(){

@@ -19,4 +19,4 @@ MonoBehaviour:
   flavor: 2
   appearance: 1
   texture: 4
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 6e6266f2a639a7e408d5c7fb2aab0e8c, type: 3}
